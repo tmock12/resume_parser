@@ -6,15 +6,9 @@ shared_examples "a parsed resume" do
     ResumeParser.parse(File.read("spec/fixtures/#{resume[:file]}"))
   end
 
-  it "returns a parsed full name" do
+  it "returns parsed resume fields" do
     expect(subject.full_name).to eq(resume[:full_name])
-  end
-
-  it "returns a parsed email address" do
     expect(subject.email_address).to eq(resume[:email])
-  end
-
-  it "returns parsed phone numbers" do
     expect(subject.phone_numbers).to eq(resume[:phone_numbers])
   end
 
