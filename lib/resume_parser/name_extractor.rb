@@ -16,7 +16,7 @@ module ResumeParser
     private
 
     def full_name_regexp
-      /\b#{common_first_name_regexp}\s(((.\.)\s(\w+))|(\w+))[ \t]?([A-Z]\w+)?/
+      /\b#{common_first_name_regexp}\s(((.\.)\s(\w+))|(\(?\w+)?\)?)[ \t]?([A-Z]\w+)?/
     end
 
     def common_first_name_regexp
