@@ -4,15 +4,20 @@ require "yomu"
 module ResumeParser
   class FileReader
 
-    attr_accessor :resume
+    attr_accessor :file, :resume
 
     def initialize(file)
-      @resume = Resume.new(read_file(file))
+      @file = file
+      @resume = resume
+    end
+
+    def resume
+      @resume ||= Resume.new(read_file)
     end
 
     private
 
-    def read_file(file)
+    def read_file
       @read_file ||= ::Yomu.read(:text, file)
     end
 
