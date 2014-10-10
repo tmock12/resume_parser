@@ -18,5 +18,9 @@ module ResumeParser
       EmailExtractor.new(text).email_address
     end
 
+    def phone_numbers
+      PhoneNumberExtractor.new(text).phone_numbers
+    end
+
   end
 end

@@ -14,6 +14,10 @@ shared_examples "a parsed resume" do
     expect(subject.email_address).to eq(resume[:email])
   end
 
+  it "returns parsed phone numbers" do
+    expect(subject.phone_numbers).to eq(resume[:phone_numbers])
+  end
+
 end
 
 describe ResumeParser do
@@ -24,7 +28,8 @@ describe ResumeParser do
         {
           file: "word_resume.docx",
           full_name: "John J. Doe",
-          email: "joe@bla.com"
+          email: "joe@bla.com",
+          phone_numbers: { phone: "(847) 767-8821" }
         }
       end
     end
@@ -36,7 +41,8 @@ describe ResumeParser do
         {
           file: "word_resume_doc.doc",
           full_name: "john smith",
-          email: "j.smith@johnsmith.com"
+          email: "j.smith@johnsmith.com",
+          phone_numbers: { mobile: "(123) 555-5555", phone: "(123) 555-5555" }
         }
       end
     end
@@ -46,7 +52,8 @@ describe ResumeParser do
         {
           file: "word_resume_doc2.doc",
           full_name: "JOHN SMITH",
-          email: "john.smith@smith.com"
+          email: "john.smith@smith.com",
+          phone_numbers: { phone: "(555) 555-5555" }
         }
       end
     end
@@ -58,7 +65,8 @@ describe ResumeParser do
         {
           file: "pdf_resume.pdf",
           full_name: "SARA R. SMITH",
-          email: "xxxxx@wm.edu"
+          email: "xxxxx@wm.edu",
+          phone_numbers: { home: '555-555-0000', mobile: '555-555-0000', phone: '555-555-0000' }
         }
       end
     end
@@ -68,7 +76,8 @@ describe ResumeParser do
         {
           file: "pdf_resume2.pdf",
           full_name: "John W. Smith",
-          email: "jwsmith@colostate.edu"
+          email: "jwsmith@colostate.edu",
+          phone_numbers: {}
         }
       end
     end
