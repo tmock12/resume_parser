@@ -1,5 +1,6 @@
 require 'resume_parser/name_extractor'
 require 'resume_parser/email_extractor'
+require 'resume_parser/phone_number_extractor'
 
 module ResumeParser
   class Resume
