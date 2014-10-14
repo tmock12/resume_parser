@@ -1,14 +1,15 @@
 require 'resume_parser/name_extractor'
 require 'resume_parser/email_extractor'
 require 'resume_parser/phone_number_extractor'
+require 'resume_parser/job_history_extractor'
 
 module ResumeParser
   class Resume
 
-    attr_accessor :full_name, :text
+    attr_accessor :text
 
     def initialize(text)
-      @text = text
+      @text = text.delete('•').gsub(/\u00a0/, ' ')
     end
 
     def full_name
