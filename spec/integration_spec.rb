@@ -10,6 +10,7 @@ shared_examples "a parsed resume" do
     expect(subject.full_name).to eq(resume[:full_name])
     expect(subject.email_address).to eq(resume[:email])
     expect(subject.phone_numbers).to eq(resume[:phone_numbers])
+    expect(subject.job_history).to eq('')
   end
 
 end

@@ -24,5 +24,9 @@ module ResumeParser
       PhoneNumberExtractor.new(text).phone_numbers
     end
 
+    def job_history
+      JobHistoryExtractor.new(text).job_history
+    end
+
   end
 end
