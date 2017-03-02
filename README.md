@@ -1,6 +1,8 @@
 # ResumeParser
 
-TODO: Write a gem description
+WIP - DO NOT USE!
+
+Resume parsers are crazy expensive and for a good reason, its not easy. This was me playing around with parsing different formatted resumes to extract a limited dataset. 
 
 ## Installation
 
